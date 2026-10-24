@@ -429,9 +429,6 @@ m = 2
 # Pangkat edge corona
 power = 3
 
-# Batas ukuran untuk model optimasi umum.
-# Matriks jarak dan kendala pasangan vertex dapat
-# menghabiskan memori besar pada graf berskala besar.
 MAX_FULL_SOLVER_VERTICES = 5000
 
 
