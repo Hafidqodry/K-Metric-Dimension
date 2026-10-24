@@ -228,11 +228,6 @@ def corona_power(G, H, power):
 # 5. DISTANCE MATRIX
 # ============================================================
 def distance_matrix(G):
-    """
-    Menghasilkan:
-        V : daftar vertex
-        D : matriks jarak terpendek antarvertex
-    """
 
     if not nx.is_connected(G):
         raise ValueError(
