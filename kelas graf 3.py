@@ -266,15 +266,7 @@ def graph_k_from_matrix(D):
 # 8. DIMENSI k-METRIK MENGGUNAKAN CP-SAT
 # ============================================================
 def metric_dimension_k(G, k, V, D):
-    """
-    Menghitung dim_k(G) menggunakan optimasi biner CP-SAT.
-
-    Mengembalikan:
-        dim   : ukuran solusi terbaik
-        basis : vertex terpilih
-        info  : informasi solver
-    """
-
+    
     function_start = time.perf_counter()
 
     n_vertices = len(V)
@@ -378,9 +370,6 @@ def metric_dimension_k(G, k, V, D):
 # 9. INFORMASI VERSI PERANGKAT LUNAK DAN PERANGKAT KERAS
 # ============================================================
 def print_environment_info():
-    """
-    Mencetak metadata eksperimen untuk reproduksibilitas.
-    """
 
     print("\n" + "=" * 60)
     print("INFORMASI LINGKUNGAN EKSPERIMEN")
