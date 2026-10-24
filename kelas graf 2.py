@@ -169,11 +169,6 @@ def edge_corona_power(G, H, power):
     power = 2 : (G ⋄ H) ⋄ H
     power = 3 : ((G ⋄ H) ⋄ H) ⋄ H
 
-    Catatan:
-        Rumus teoretis pada artikel untuk kelas
-        T_{m,n} ⋄ W_r berlaku ketika power = 1.
-    """
-
     if power < 1:
         raise ValueError(
             "Pangkat edge corona harus memenuhi power >= 1."
@@ -202,9 +197,6 @@ def edge_corona_power(G, H, power):
 # 5. DISTANCE MATRIX
 # ============================================================
 def distance_matrix(G):
-    """
-    Menghitung matriks jarak terpendek antarpasangan vertex.
-    """
 
     if not nx.is_connected(G):
         raise ValueError("Graf harus terhubung.")
@@ -259,14 +251,6 @@ def graph_k(G):
 # 7. DIMENSI k-METRIK MENGGUNAKAN CP-SAT
 # ============================================================
 def metric_dimension_k(G, k):
-    """
-    Menentukan dim_k(G) dengan optimasi biner CP-SAT.
-
-    Mengembalikan:
-        dim   : ukuran solusi
-        basis : vertex yang dipilih
-        info  : status solver, objektif, bound, runtime
-    """
 
     function_start = time.perf_counter()
 
@@ -376,10 +360,6 @@ def theoretical_dim2_tadpole_wheel(m, n, r, power):
 # 9. INFORMASI LINGKUNGAN EKSPERIMEN
 # ============================================================
 def print_environment_info():
-    """
-    Mencetak informasi perangkat lunak, perangkat keras,
-    dan Git commit untuk reproduksibilitas.
-    """
 
     print("\n" + "=" * 60)
     print("INFORMASI LINGKUNGAN EKSPERIMEN")
