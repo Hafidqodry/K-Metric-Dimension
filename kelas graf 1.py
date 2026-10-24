@@ -10,7 +10,6 @@ import numpy as np
 import ortools
 from ortools.sat.python import cp_model
 
-# psutil bersifat opsional untuk membaca kapasitas RAM
 try:
     import psutil
 except ImportError:
@@ -286,19 +285,6 @@ def graph_k(G):
 # 7. DIMENSI k-METRIK MENGGUNAKAN CP-SAT
 # ============================================================
 def metric_dimension_k(G, k):
-    """
-    Menentukan dim_k(G) melalui optimasi biner CP-SAT.
-
-    Mengembalikan:
-        dim       : ukuran solusi
-        basis     : vertex yang dipilih
-        info      : status, objektif, bound, dan runtime
-
-    CATATAN:
-        OPTIMAL berarti optimalitas model telah dibuktikan.
-        FEASIBLE berarti solusi layak ditemukan, tetapi
-        optimalitasnya belum terbukti.
-    """
 
     start_function = time.perf_counter()
 
@@ -390,16 +376,6 @@ def metric_dimension_k(G, k):
 # 8. RUMUS TEORETIS DIMENSI 2-METRIK
 # ============================================================
 def theoretical_dim2_corona(m, n, p, q):
-    """
-    Rumus yang dinyatakan dalam naskah:
-        (m+n+1)(floor(p/2) + ceil(q/2) + 2)
-
-    Rumus ini dikembalikan hanya untuk q = 3 atau q = 4,
-    sesuai rentang yang dinyatakan dalam naskah.
-
-    Nilai teoretis ini tetap harus didukung oleh pembuktian
-    matematis yang sudah diperbaiki.
-    """
 
     if p < 3 or q not in (3, 4):
         return None
@@ -414,9 +390,7 @@ def theoretical_dim2_corona(m, n, p, q):
 # 9. INFORMASI VERSI, PERANGKAT KERAS, DAN GIT COMMIT
 # ============================================================
 def print_environment_info():
-    """
-    Mencetak metadata eksperimen untuk reproduksibilitas.
-    """
+
 
     print("\n" + "=" * 60)
     print("INFORMASI LINGKUNGAN EKSPERIMEN")
